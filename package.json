@@ -1,7 +1,7 @@
 {
   "name": "metal-drop-target",
   "description": "Metal component used for a drop zone",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "BSD",
   "repository": "https://github.com/bryceosterhaus/metal-drop-target.git",
   "engines": {
