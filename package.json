@@ -19,6 +19,7 @@
     "build": "babel -d lib/ src/",
     "format": "eslint . --ignore-pattern node_modules --ignore-pattern lib --ignore-pattern benchmark --fix",
     "lint": "eslint . --ignore-pattern node_modules --ignore-pattern lib --ignore-pattern benchmark",
+    "prepublish": "npm run build",
     "test": "jest"
   },
   "author": "Bryce Osterhaus <bryceosterhaus@gmail.com>",
