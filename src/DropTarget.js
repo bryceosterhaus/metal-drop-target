@@ -89,10 +89,7 @@ class DropTarget extends Component {
 	}
 
 	render() {
-		const {
-			props: {children, dragMessage, hoverMessage},
-			state: {dragging, hoverOver}
-		} = this;
+		const {props: {children, message, hoverMessage}, state: {hoverOver}} = this;
 
 		return (
 			<div
@@ -103,11 +100,7 @@ class DropTarget extends Component {
 				onDrop={this.handleTargetDrop}
 			>
 				<Transition name="drop-zone-fade-in">
-					{dragging && (
-						<div class="drop-zone">
-							{hoverOver ? hoverMessage : dragMessage}
-						</div>
-					)}
+					<div class="drop-zone">{hoverOver ? hoverMessage : message}</div>
 				</Transition>
 
 				{children}
@@ -118,7 +111,7 @@ class DropTarget extends Component {
 
 DropTarget.PROPS = {
 	container: Config.object().value(document),
-	dragMessage: Config.any(),
+	message: Config.any(),
 	hoverMessage: Config.any(),
 	onDrop: Config.func(),
 	targetType: Config.oneOf(Object.values(DRAG_TYPES))
